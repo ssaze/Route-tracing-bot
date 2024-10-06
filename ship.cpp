@@ -117,19 +117,6 @@ if (typeMap1 == 'M') {
 
         }
     }
-
-    // cout << "Start in level " << start.level << ", row " << start.row << ", column " << start.column << "\n";
-    // for (size_t level1 = 0; level1 < levels; ++level1) {
-    //     cout << "//level " << level1 << "\n";
-    //     for (size_t row1 = 0; row1 < dimension; ++row1) {
-    //         for (size_t col1 = 0; col1 < dimension; ++col1) {
-
-    //                 cout << map[level1][row1][col1].value;
-    //         }
-    //         cout << "\n"; 
-    //     }
-    // } 
-    // exit (1);
   }
 }
 
