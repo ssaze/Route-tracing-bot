@@ -127,7 +127,6 @@ bool Map::inBounds(size_t x, size_t y, size_t z) {
 
 //Search container function
 bool Map::search(Map &mappy, char s_q, char outputMode) { 
-//    cout << "search accessed" << endl;
 
     deque<SquareCoords> searchContainer;
     bool hangerFound = false;
@@ -158,7 +157,6 @@ bool Map::search(Map &mappy, char s_q, char outputMode) {
             // (" << level << "," << row << "," << column << ")" << std::endl;
                 hangerFound = true;
                 
-         //       cout << "hanger found" << endl;
                 mappy.hanger.row = row - 1;
                 mappy.hanger.column = column;
                 mappy.hanger.level = level;
@@ -194,7 +192,6 @@ bool Map::search(Map &mappy, char s_q, char outputMode) {
           // (" << level << "," << row << "," << column << ")" << std::endl;
             hangerFound = true;
 
-         //   cout << "hanger found" << endl;
             mappy.hanger.row = row + 1;
             mappy.hanger.column = column;
             mappy.hanger.level = level;
@@ -209,10 +206,8 @@ bool Map::search(Map &mappy, char s_q, char outputMode) {
             mappy.map[level][row][column - 1].cameFrom = 'w'; // Mark as discovered
             // If we found the hangar ('H'), stop searching
         if (mappy.map[level][row][column - 1].value == 'H') {
-          // (" << level << "," << row << "," << column << ")" << std::endl;
             hangerFound = true;
             
-         //   cout << "hanger found" << endl;
             mappy.hanger.row = row;
             mappy.hanger.column = column - 1;
             mappy.hanger.level = level;
@@ -232,7 +227,6 @@ bool Map::search(Map &mappy, char s_q, char outputMode) {
                 }
             }
         }
-      //cout << mappy.map[level][row][column].cameFrom << endl;
     }
 
     if (!hangerFound) {
@@ -255,7 +249,6 @@ bool Map::search(Map &mappy, char s_q, char outputMode) {
      // Output the path
             cout << "//path taken\n";
         }
-    
     }
     return hangerFound;
 }
@@ -268,7 +261,6 @@ void Map::backtrack_map() {
     size_t row = hanger.row;
     size_t column = hanger.column;
 
-//    cout << "backtrack accessed" << endl;
     // Keep track of the previous direction
     char prevValue = map[level][row][column].cameFrom;
 
@@ -459,7 +451,6 @@ void getOptions(int argc, char *argv[], Options &options) {
 }
 
 
-// This function is already done.
 int main(int argc, char *argv[]) {
   // This should be in all of your projects, speeds up I/O
   ios_base::sync_with_stdio(false);
@@ -509,10 +500,6 @@ int main(int argc, char *argv[]) {
         mappy.backtrack_coords();
     }
     }
-
-
- 
-
     return 0;
 }
 
