@@ -10,12 +10,12 @@ using namespace std;
 
 //READING FUNCTION
 void Map::readMap(char typeMap1) {
-// cout << "readMap accessed" << endl;
 
     // MAP MODE
 if (typeMap1 == 'M') {
     size_t level = 0, row = 0;
     string line;
+    
     // Read input until all levels and rows are processed
     while (level < levels) {
         row = 0;
