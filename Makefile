@@ -1,5 +1,3 @@
-## EECS 281 Advanced Makefile
-
 # How to use this Makefile...
 ###################
 ###################
@@ -9,43 +7,26 @@
 ###################
 ###################
 
-# IMPORTANT NOTES:
-#   1. Set EXECUTABLE to the command name from the project specification.
-#   2. To enable automatic creation of unit test rules, your program logic
-#      (where main() is) should be in a file named project*.cpp or
-#      specified in the PROJECTFILE variable.
-#   3. Files you want to include in your final submission cannot match the
-#      test*.cpp pattern.
 
 #######################
 # TODO (begin) #
 #######################
-# Change 'youruniqname' to match your UM uniqname (no quote marks).
-UNIQNAME    = youruniqname
 
-# Change the right hand side of the identifier to match the project identifier
-# given in the project or lab specification.
 IDENTIFIER  = 950181F63D0A883F183EC0A5CC67B19928FE896A
 
-# Change 'executable' to match the command name given in the project spec.
 EXECUTABLE  = ship
 
-# The following line looks for a project's main() in files named project*.cpp,
 # executable.cpp (substituted from EXECUTABLE above), or main.cpp
 PROJECTFILE = $(or $(wildcard project*.cpp $(EXECUTABLE).cpp), main.cpp)
-# If main() is in another file delete line above, edit and uncomment below
 #PROJECTFILE = mymainfile.cpp
 
-# This is the path from the CAEN home folder to where projects will be
-# uploaded. (eg. /home/mmdarden/eecs281/project1)
-# Change this if you prefer a different path.
-# REMOTE_PATH := eecs281_$(EXECUTABLE)_sync  # /home/mmdarden/eecs281_proj0_sync
+
 REMOTE_PATH := eecs281_$(EXECUTABLE)_sync
 #######################
 # TODO (end) #
 #######################
 
-# enables c++17 on CAEN or 281 autograder
+# enables c++17 on CAEN
 PATH := /usr/um/gcc-11.3.0/bin:$(PATH)
 LD_LIBRARY_PATH := /usr/um/gcc-11.3.0/lib64
 LD_RUN_PATH := /usr/um/gcc-11.3.0/lib64
@@ -116,7 +97,6 @@ FULL_SUBMITFILE = fullsubmit.tar.gz
 PARTIAL_SUBMITFILE = partialsubmit.tar.gz
 UNGRADED_SUBMITFILE = ungraded.tar.gz
 
-# These files are excluded when checking for project identifier (no spaces!)
 NO_IDENTIFIER = xcode_redirect.hpp,getopt.h,getopt.c,xgetopt.h
 
 # make identifier - will check to ensure that all source code and header files
