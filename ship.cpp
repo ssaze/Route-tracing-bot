@@ -1,7 +1,4 @@
-// Project Identifier: 950181F63D0A883F183EC0A5CC67B19928FE896A
-
-// EECS 281: Project 1
-#include "ship.hpp"
+#include "bot.hpp"
 #include <getopt.h>
 #include <iostream>
 #include <string>
