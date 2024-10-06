@@ -10,8 +10,7 @@
 #include <deque>
 
 
-// These modes represent the different ways to process the input data.
-// There are three modes and the state where no mode has been selected.
+
 enum class StackOrQueue {
   kNone = 0,
   kStack,
@@ -21,7 +20,7 @@ enum class StackOrQueue {
 
 enum class Output {
   kNone = 0,
-  kMap,   //what is the k of kMap
+  kMap,  
   kCoordinateList,
 };  // Mode{}
 
@@ -38,10 +37,6 @@ struct SquareCoords {
     size_t column;
 };
 
-// This struct is used to pass options read from the command line, to
-// the functions that actually do the work. Project 0 is simple enough to
-// not need this, but it is a technique that could be helpful in doing more
-// complicated command-line processing in future projects.
 
 struct Options {
     StackOrQueue mode = StackOrQueue::kNone;
@@ -53,7 +48,6 @@ struct Options {
 
 class Map {
     private:
-    // size_t hanger;
     size_t dimension, levels;
     std::vector<std::vector<std::vector<Square>>> map;
     SquareCoords start = {0, 0, 0};
@@ -61,7 +55,6 @@ class Map {
 
 
     public:
-    //'make this a function'
     
     //constructor to resize map
     Map(size_t dim, size_t lvl) : 
